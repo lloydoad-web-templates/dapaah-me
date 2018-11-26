@@ -1,0 +1,109 @@
+.explorer-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 0.18px;
+    border-color: rgb(6,36,85); 
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    top: 50px;
+    left: 40px;
+    width: 600px;
+    height: 80%;
+    background-color: azure;
+}
+
+.explorer-top-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: black;
+    height: 30px;
+    width: 100%;
+}
+
+.quit-icon {
+    height: 70%;
+    margin: 0px;
+    margin-left: 6px;
+    object-fit: contain;
+}
+
+.explorer-content {
+    background-color: rgb(30, 78, 119);
+    height: 96%;
+    width: 100%;
+    overflow: scroll;
+}
+
+.remove-scroll {
+    overflow: hidden;
+}
+
+@media (max-width: 700px) {
+    .explorer-container {
+        margin: 0;
+        top: 40px;
+        left: 0px;
+        width: 100%;
+        height: 90%;
+    }
+}
+
+@media (max-height: 500px) {
+    .explorer-container {
+        margin: 0;
+        top: 40px;
+        left: 0px;
+        width: 100%;
+        height: 90%;
+    }
+}
+
+/* mail */
+.mail-form {
+    margin: 12px;
+}
+
+label {
+    color: aliceblue;
+}
+
+/* projects */
+.projects-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+}
+
+.projects-icon {
+    padding: 10px;
+    width: 96px;
+    height: 120px;
+}
+
+/* pdf viewer */
+.image-self {
+    width: 100%;
+}
+
+.square-image-self {
+    width: 100%;
+}
+
+@media (max-width: 1025px) {
+    .image-self {
+        height: 1050px;
+        width: 742.3px;
+    }
+}
+
+@media (max-width: 500px) {
+    .image-self {
+        object-fit: contain;
+        height: 700px;
+        width: 498.8px;
+    }
+}

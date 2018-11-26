@@ -1,0 +1,206 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lloyd Dapaah</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="./style/launch.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./style/main.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="./style/window.css"/>
+    <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+</head>
+<body>
+    <audio id="click-audio">
+        <source src="./resources/simple_click_sound.mp3" type="audio/mpeg">
+        Your browser does not support audio
+    </audio>
+    <audio id="opening-sound">
+        <source src="./resources/openingSound.mp3" type="audio/mpeg">
+        Your browser does not support audio
+    </audio>
+
+    <main>
+        <div class="loading-background">
+            <div class="loading-container">
+                <h1 class="label intro-label" style="font-size:x-large; margin-top: 24px">Hi, I'm Lloyd</h1>
+                <h1 class="label intro-label" style="font-size:x-large">I'm a developer + a designer</h1>
+                <img class="launch-image" src="./images/loader.gif" alt="loading.gif">
+            </div>
+        </div>
+
+        <div class="main-background">
+            <div class="top-bar">
+                <div class="top-bar-menu">
+                    <a id="menuButton" class="label menu-button" href="#">Menu</a>
+                </div>
+
+                <div id="menuItems" class="top-menu transparent-container" style="display:none">
+                    <div class="top-menu-section">
+                        <a class="label menu-label" href="#">Mail</a>
+                        <a class="label menu-label" href="#">Résumé</a>
+                    </div>
+                    <div class="top-menu-section">
+                        <a class="label menu-label" href="#">LinkedIn</a>
+                        <a class="label menu-label" href="#">Github</a>
+                        <a class="label menu-label" href="#">Projects</a>
+                    </div>
+                    <div class="top-menu-section" style="border: none">
+                        <a class="label menu-label" href="#">Restart...</a>
+                    </div>
+                </div>
+
+                <div class="top-bar-time">
+                    <p class="label time-label">00:00 XXX XX</p>
+                </div>
+            </div>
+
+            <div class="main-window">
+                <div class="icon-container">
+                    <div class="single-icon">
+                        <img class="icon-image" src="./images/aboutMeIcon.png" alt="icon">
+                        <p class="label icon-label">AboutMe.pdf</p>
+                    </div>
+                    <div class="single-icon">
+                        <img class="icon-image" src="./images/blackFolderIcon.png" alt="icon">
+                        <p class="label icon-label">Projects</p>
+                    </div>
+                    <div class="single-icon">
+                        <img class="icon-image" src="./images/mailIcon.png" alt="icon">
+                        <p class="label icon-label">Mail.exe</p>
+                    </div>
+                    <div class="single-icon">
+                        <img class="icon-image" src="./images/briefcaseIcon.png" alt="icon">
+                        <p class="label icon-label">Résumé.pdf</p>
+                    </div>
+                    <div class="single-icon">
+                        <img class="icon-image" src="./images/linkedInIcon.png" alt="icon">
+                        <p class="label icon-label">LinkedIn.html</p>
+                    </div>
+                    <div class="single-icon">
+                        <img class="icon-image" src="./images/githubIcon.svg" alt="icon">
+                        <p class="label icon-label">Github.html</p>
+                    </div>
+                    <div class="single-icon">
+                        <img class="icon-image" src="./images/twitterIcon.png" alt="icon">
+                        <p class="label icon-label">Twitter.html</p>
+                    </div>
+                    <div class="single-icon">
+                        <img class="icon-image" src="./images/instagramIcon.png" alt="icon">
+                        <p class="label icon-label">Instagram.html</p>
+                    </div>
+                </div>
+
+                <!-- main windows -->
+                <div id="resumePdf" class="explorer-container movable-window" style="display:none">
+                    <div class="explorer-top-bar">
+                        <img class="quit-icon" src="./images/quitIcon.png" alt="quit-resume" onclick="closeWindow(resumePdf)">
+                    </div>
+                    <div class="explorer-content">
+                        <img class="image-self" src="./pdfs/Resume_LloydDapaah.png" alt="resumePdf">
+                    </div>
+                </div>
+                <div id="aboutMePdf" class="explorer-container movable-window" style="display:none">
+                    <div class="explorer-top-bar">
+                        <img class="quit-icon" src="./images/quitIcon.png" alt="quit-resume" onclick="closeWindow(aboutMePdf)">
+                    </div>
+                    <div class="explorer-content">
+                        <img class="image-self" src="./pdfs/placeholderPdf.png" alt="placeholderPdf">
+                    </div>
+                </div>
+                <div id="mailExe" class="explorer-container movable-window" style="display:none">
+                    <div class="explorer-top-bar">
+                        <img class="quit-icon" src="./images/quitIcon.png" alt="quit-resume" onclick="closeWindow(mailExe)">
+                    </div>
+                    <div class="explorer-content remove-scroll">
+                        <form div="mailForm" class="mail-form">
+                            <div class="row">
+                                <div class="six columns">
+                                <label for="exampleEmailInput">Your email</label>
+                                <input class="u-full-width" type="email" placeholder="sender@mail.com" id="exampleEmailInput" required>
+                                </div>
+                                <div class="six columns">
+                                <label for="exampleRecipientInput">Reason for contacting</label>
+                                <select class="u-full-width" id="exampleRecipientInput">
+                                    <option value="Option 1">Questions</option>
+                                    <option value="Option 2">Concerns</option>
+                                    <option value="Option 3">Opportunities</option>
+                                </select>
+                                </div>
+                            </div>
+                            <label for="exampleMessage">Message</label>
+                            <textarea class="u-full-width" placeholder="Hi Lloyd …" id="exampleMessage" required></textarea>
+                            <input class="button-primary" type="button" value="Submit" onclick="parseFormData(this)">
+                        </form>
+                        <h2 class="label sent-label" style="text-align:center; width: 100%; display: none">SENT</h2>
+                    </div>
+                </div>
+                <div id="projects" class="explorer-container movable-window" style="display:none">
+                    <div class="explorer-top-bar">
+                        <img class="quit-icon" src="./images/quitIcon.png" alt="quit-resume" onclick="closeWindow(projects)">
+                    </div>
+                    <div class="explorer-content remove-scroll">
+                        <div class="projects-container">
+                            <div class="projects-icon">
+                                <img class="icon-image" src="./images/projectIcon.png" alt="icon">
+                                <p class="label icon-label">Tell</p>
+                            </div>
+                            <div class="projects-icon">
+                                <img class="icon-image" src="./images/projectIcon.png" alt="icon">
+                                <p class="label icon-label">Space Invaders</p>
+                            </div>
+                            <div class="projects-icon">
+                                <img class="icon-image" src="./images/projectIcon.png" alt="icon">
+                                <p class="label icon-label">Feast</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- project pdfs -->
+                <div id="tellPdf" class="explorer-container movable-window" style="display:none">
+                    <div class="explorer-top-bar">
+                        <img class="quit-icon" src="./images/quitIcon.png" alt="quit-resume" onclick="closeWindow(tellPdf)">
+                    </div>
+                    <div class="explorer-content remove-scroll" style="background-color:rgb(63,74,85);overflow-y: scroll;">
+                        <img class="square-image-self" src="./pdfs/tell.png" alt="tellPdf">
+                    </div>
+                </div>
+
+                <div id="spaceInvadersPdf" class="explorer-container movable-window" style="display:none">
+                    <div class="explorer-top-bar">
+                        <img class="quit-icon" src="./images/quitIcon.png" alt="quit-resume" onclick="closeWindow(spaceInvadersPdf)">
+                    </div>
+                    <div class="explorer-content remove-scroll" style="background-color:rgb(63,74,85);overflow-y: scroll;">
+                        <img class="square-image-self" src="./pdfs/space-invaders.png" alt="spaceInvadersPdf">
+                    </div>
+                </div>
+
+                <div id="feastPdf" class="explorer-container movable-window" style="display:none">
+                    <div class="explorer-top-bar">
+                        <img class="quit-icon" src="./images/quitIcon.png" alt="quit-resume" onclick="closeWindow(feastPdf)">
+                    </div>
+                    <div class="explorer-content remove-scroll" style="background-color:rgb(63,74,85);overflow-y: scroll;">
+                        <img class="square-image-self" src="./pdfs/feast.png" alt="feastPdf">
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p class="label footer-label">Photo by Tadej Skofic</p>
+            </div>
+        </div>
+    </main>
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="./script/jquery-ui.min.js"></script>
+    <script src="./script/main.js"></script>
+    <script src="./script/mail.js"></script>
+</body>
+</html>
