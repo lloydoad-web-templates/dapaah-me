@@ -14,7 +14,7 @@ const projects = document.querySelector("#projects");
 const timeLabel = document.querySelector(".time-label");
 const launchScreen = document.querySelector(".loading-background");
 const intros = document.querySelectorAll(".intro-label");
-const clickSound = document.getElementById("click-audio"); 
+// const clickSound = document.getElementById("click-audio"); 
 const openingSound = document.getElementById("opening-sound");
 const mainDesktop = document.querySelector(".main-background");
 const quotes = [
@@ -70,7 +70,6 @@ $(document).ready(function () {
         icons[i].onclick = function () {
             const singleIcon = icons[i];
             const iconText = singleIcon.getElementsByTagName("p")[0].innerText;
-            playAudio();
 
             // open external link if available
             directToSocialMedia(iconText);
@@ -83,7 +82,6 @@ $(document).ready(function () {
     for (let j = 0; j < menuItems.length; j++) {
         menuItems[j].onclick = function () {
             const menuText = menuItems[j].innerText;
-            playAudio();
 
             // open external link if available
             directToSocialMedia(menuText);
@@ -101,7 +99,6 @@ $(document).ready(function () {
         projectIcons[k].onclick = function () {
             const singleIcon = projectIcons[k];
             const iconText = singleIcon.getElementsByTagName("p")[0].innerText;
-            playAudio();
 
             if (iconText === "Tell") {
                 selectRandomSpot(tellPdf)
@@ -117,7 +114,6 @@ $(document).ready(function () {
     }
 
     menuSwitch.onclick = function() {
-        playAudio();
         isShowingMenu = !isShowingMenu;
     
         if (isShowingMenu === true) {
@@ -128,10 +124,6 @@ $(document).ready(function () {
         }
     };
 });
-
-function playAudio() {
-    clickSound.play();
-}
 
 function bootupSound() {
     openingSound.play()

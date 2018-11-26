@@ -14,10 +14,6 @@
     <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
 </head>
 <body>
-    <audio id="click-audio">
-        <source src="./resources/simple_click_sound.mp3" type="audio/mpeg">
-        Your browser does not support audio
-    </audio>
     <audio id="opening-sound">
         <source src="./resources/openingSound.mp3" type="audio/mpeg">
         Your browser does not support audio
@@ -120,7 +116,7 @@
                             <div class="row">
                                 <div class="six columns">
                                 <label for="exampleEmailInput">Your email</label>
-                                <input class="u-full-width" type="email" placeholder="sender@mail.com" id="exampleEmailInput" required>
+                                <input type="email" name="email" class="u-full-width" placeholder="sender@mail.com" id="exampleEmailInput" required>
                                 </div>
                                 <div class="six columns">
                                 <label for="exampleRecipientInput">Reason for contacting</label>
@@ -132,8 +128,12 @@
                                 </div>
                             </div>
                             <label for="exampleMessage">Message</label>
-                            <textarea class="u-full-width" placeholder="Hi Lloyd …" id="exampleMessage" required></textarea>
-                            <input class="button-primary" type="button" value="Submit" onclick="parseFormData(this)">
+                            <textarea name="message" class="u-full-width" placeholder="Hi Lloyd …" id="exampleMessage" required></textarea>
+                            <input type="text" name="trapit" value="" style="display:none">
+                            <input type="hidden" name="after" value="http://www.dapaah.me/#">
+                            <input type="button" value="Submit" class="button-primary" onclick="parseFormData(this)">
+                            <!-- action="https://jumprock.co/mail/lloydemail" method="post" -->
+                            <!-- onclick="parseFormData(this)" -->
                         </form>
                         <h2 class="label sent-label" style="text-align:center; width: 100%; display: none">SENT</h2>
                     </div>
