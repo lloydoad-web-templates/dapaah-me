@@ -1,5 +1,5 @@
 const mailForm = document.querySelector(".mail-form");
-const MAIL_API = "http://localhost:5000/" + "send-mail";
+const MAIL_API = "https://secure-peak-45833.herokuapp.com/" + "send-mail";
 const sentLabel = document.querySelector(".sent-label");
 
 function parseFormData(event) {
